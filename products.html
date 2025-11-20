@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات ما</title>
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">خانه</a>
+            <a href="products.html" class="active-link">محصولات</a> 
+            <a href="about.html">درباره ما</a>
+            <a href="contact.html">تماس</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content">
+        <section class="products-grid full-page-grid" id="products">
+            <h2>تمام محصولات ما</h2>
+
+            <div class="grid-container">
+                <div class="product-card">
+				<a href="product-view-whisky.html" class="product-link-overlay">
+                    <img src="files/whisky.jpg" alt="ویسکی گندم">
+                    <h3>ویسکی گندم</h3>
+                    <p>تهیه شده از بهترین گندم‌ها با طعم دودی ملایم</p>
+					</a>
+                    <a href="product-view-whisky.html" class="buy-btn">خرید</a>
+                </div>
+                
+                <div class="product-card">
+				<a href="product-view-grape.html" class="product-link-overlay">
+                    <img src="files/grape.jpg" alt="وودکا انگور">
+                    <h3>وودکا انگور</h3>
+                    <p>عصاره انگور قرمز رسیده. مناسب برای کوکتل‌های مجلسی</p>
+					</a>
+                    <a href="product-view-grape.html" class="buy-btn">خرید</a>
+                </div>
+
+                <div class="product-card">
+				<a href="product-view-lemon.html" class="product-link-overlay">
+                    <img src="files/lemon.jpg" alt="وودکا لیمو">
+                    <h3>وودکا لیمو</h3>
+                    <p>طعم ترش و تند لیموی تازه. بسیار شاداب‌کننده</p>
+					</a>
+                    <a href="product-view-lemon.html" class="buy-btn">خرید</a>
+                </div>
+                
+                 <div class="product-card">
+				 <a href="product-view-apple.html" class="product-link-overlay">
+                    <img src="files/apple.jpg" alt="وودکا سیب">
+                    <h3>وودکا سیب</h3>
+                    <p>سیب سبز تازه. مزه‌ای که خاطرات را زنده می‌کند</p>
+					</a>
+                    <a href="product-view-apple.html" class="buy-btn">خرید</a>
+                </div>
+
+                 <div class="product-card">
+				 <a href="product-view-banana.html" class="product-link-overlay">
+                    <img src="files/banana.jpg" alt="وودکا موز">
+                    <h3>وودکا موز</h3>
+                    <p>طعم شیرین و خنک موز تازه. تجربه‌ای متفاوت از ودکا</p>
+					</a>
+                    <a href="product-view-banana.html" class="buy-btn">خرید</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+<p>تمامی حقوق این وب سایت برای پارس درینک محفوظ است</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>

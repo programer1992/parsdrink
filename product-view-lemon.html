@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ودکا لیمو - جزئیات محصول</title>
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">خانه</a>
+            <a href="products.html" class="active-link">محصولات</a> 
+            <a href="about.html">درباره ما</a>
+            <a href="contact.html">تماس</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content product-view-page">
+        <div class="container">
+            
+            <section class="product-details">
+                
+                <div class="product-image-container">
+                    <img src="files/lemon.jpg" alt="ودکا لیمو" class="main-product-img">
+                </div>
+                
+                <div class="product-info">
+                    <h1>ودکا لیمو (Lemon Vodka)</h1>
+                    <p class="product-price">قیمت: ۶۰۰,۰۰۰ تومان</p>
+                    
+                    <div class="short-description">
+                        <h3>خلاصه:</h3>
+                        <p>ودکای کلاسیک با طعم قوی و دلنشین لیمو. ایده‌آل برای افزودن یک طعم تند و تازه به مارتینی‌ها و کوکتل‌های وودکا.</p>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>مشخصات:</h3>
+                        <ul>
+                            <li><i class="fas fa-wine-bottle"></i> حجم : ۱۰۰۰ میلی ‌لیتر</li>
+                            <li><i class="fas fa-percent"></i> درصد الکل : ۴5% VOL</li>
+                            <li><i class="fas fa-seedling"></i> مواد اولیه اصلی : پوست لیموی سیسیلی، غلات چند بار تقطیر شده</li>
+                            <li><i class="fas fa-utensils"></i> پیشنهاد سرو : کوکتل لیموناد ودکا، مارتینی لیمو</li>
+                        </ul>
+                    </div>
+
+                    <div class="long-description">
+                        <h3>توضیحات کامل:</h3>
+                        <p>برای تولید این ودکا، پوست لیموهای تازه با دقت دستچین شده و با ودکای خالص ترکیب می‌شود تا تنها اسانس معطر و تند لیمو استخراج گردد. این فرآیند باعث ایجاد یک ودکای بسیار معطر و طعم‌دار می‌شود که پایه عالی برای هر نوشیدنی با طعم مرکبات است.</p>
+                    </div>
+                    
+                    <a href="https://wa.me/212783611965?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D9%85%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D9%88%D8%AF%DA%A9%D8%A7%20%D9%84%DB%8C%D9%85%D9%88%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AB%D8%A8%D8%AA%20%DA%A9%D9%86%D9%85" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> خرید از طریق واتساپ
+                    </a>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>تمامی حقوق این وب سایت برای پارس درینک محفوظ است</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>

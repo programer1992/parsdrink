@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما</title>
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">خانه</a>
+            <a href="products.html">محصولات</a> 
+            <a href="about.html">درباره ما</a>
+            <a href="contact.html" class="active-link">تماس</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content contact-page">
+        <div class="container">
+            
+            <section class="contact-section">
+                <h2>ارتباط با ما و ثبت سفارش</h2>
+                
+                <div class="contact-card">
+                    
+                    <h3>سریع‌ترین راه ارتباطی</h3>
+                    <p>جهت ثبت سفارش، دریافت مشاوره یا پیگیری محصولات، لطفاً از طریق دکمه زیر به واتساپ ما پیام دهید. کارشناسان ما در سریع‌ترین زمان ممکن پاسخگوی شما خواهند بود.</p>
+                    
+                    <a href="https://wa.me/212783611965?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D9%85%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D9%86%D8%AD%D9%88%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%AF%D8%B1%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%20%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%20%D9%BE%DB%8C%D8%AF%D8%A7%20%DA%A9%D9%86%D9%85" target="_blank" class="whatsapp-btn whatsapp-lg">
+                        <i class="fab fa-whatsapp"></i> پیام به پشتیبانی واتساپ
+                    </a>
+
+                    <div class="privacy-note">
+                        <h3>🔒 محرمانگی و امنیت سفارش</h3>
+                        <p>با توجه به ماهیت محصولات و **محدودیت‌های قانونی موجود در ایران**، ما بر **حفظ محرمانگی اطلاعات شما** تمرکز ویژه‌ای داریم.</p>
+                        <ul>
+                            <li><i class="fas fa-lock"></i> **حذف چت‌ها:** پس از نهایی شدن سفارش و تحویل محصول، تمام سوابق چت شما با حفظ کامل حریم خصوصی حذف خواهد شد.</li>
+                            <li><i class="fas fa-user-secret"></i> **عدم ذخیره اطلاعات شخصی:** ما هیچگونه اطلاعات تماس یا آدرس شما را بیش از زمان لازم (تحویل کالا) ذخیره نمی‌کنیم.</li>
+                            <li><i class="fas fa-shield-alt"></i> **بسته‌بندی امن:** بسته‌بندی محصولات کاملاً محرمانه و بدون هیچ‌گونه نشانه‌ای از محتوای داخلی خواهد بود.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+<p>تمامی حقوق این وب سایت برای پارس درینک محفوظ است</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
