@@ -396,6 +396,7 @@ a {
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 8px;
+	text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -494,6 +495,7 @@ a {
     background-color: white; /* **زمینه سفید** */
     padding: 30px;
     border-radius: 8px;
+	text-align: left;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -503,6 +505,7 @@ a {
     margin-bottom: 10px;
     border-bottom: 3px solid #FF5722;
     padding-bottom: 10px;
+	text-align: left;
 }
 
 .product-price {
@@ -510,6 +513,7 @@ a {
     color: #FF5722;
     font-weight: bold;
     margin-bottom: 30px;
+	text-align: left;
 }
 
 /* --- استایل دکمه واتساپ --- */
@@ -663,7 +667,7 @@ a {
     border-radius: 8px;
     padding: 25px;
     margin-top: 30px;
-    text-align: right; /* متن داخلی به راست برگردد */
+    text-align: left; /* متن داخلی به راست برگردد */
 }
 
 .privacy-note h3 {
@@ -673,11 +677,13 @@ a {
     display: block;
     padding-bottom: 10px;
     margin-bottom: 15px;
+	text-align: left;
 }
 
 .privacy-note ul {
     list-style: none;
     padding: 0;
+	text-align: left;
 }
 
 .privacy-note ul li {
