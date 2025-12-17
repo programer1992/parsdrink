@@ -1,0 +1,992 @@
+/* تنظیمات عمومی و ریست */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+	font-family: IRANSansXFaNum;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../files/font/woff/IRANSansXFaNum-Regular.woff') format('woff'),   
+	url('../files/font/woff2/IRANSansXFaNum-Regular.woff2') format('woff2');	
+}
+
+body {
+    font-family: "IRANSansXFaNum", Tahoma, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    direction: rtl; 
+    text-align: right;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #FF5722; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- استایل‌های عمومی طرح‌بندی --- */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.active-link {
+    color: #ffc107 !important;
+}
+
+/* آندرلاین زیر لینک فعال */
+.active-link::after {
+    width: 100% !important;
+}
+
+
+/* --- 1. نوار ناوبری (Navbar) --- */
+.navbar {
+    background-color: #0A1931; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white; 
+    text-decoration: none; 
+}
+
+
+.nav-links a {
+    margin-right: 25px;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #FF5722; 
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: #FF5722;
+    transition: width 0.3s;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.hero-banner {
+    width: 100%;
+    height: 144vh; 
+    background-size: 95% auto; 
+    background-position: center bottom; 
+    background-repeat: no-repeat;
+    background-color: #FDFDFD; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+
+.banner-content {
+    color: white;
+    padding: 0 10%;
+    z-index: 10;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.banner-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #333;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #ff9800;
+}
+
+
+.cta-btn2 {
+    color: #F0CE0D;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s; /* تغییر از background-color به all برای انتقال بهتر حاشیه */
+}
+
+
+/* --- 3. بنر ترویجی (Promotion Banner) --- */
+.promotion-banner {
+    width: 100%;
+    padding: 100px 5%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.promotion-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.promotion-content {
+    position: relative;
+    z-index: 10;
+}
+
+.promotion-content h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.promotion-content p {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+}
+
+.promo-btn {
+    display: inline-block;
+    border: 2px solid #ffc107;
+    color: #ffc107;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.promo-btn:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+
+/* --- 4. لیست محصولات (Products Grid) --- */
+.products-grid {
+    padding: 50px 5%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    /* **مهم:** پوزیشن باید Relative باشد تا لینک بتواند به آن چسبیده و کل سطح را پوشش دهد */
+    position: relative; 
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.product-link-overlay {
+    /* دیسپلی Block برای اینکه تمام عرض در دسترس را بگیرد */
+    display: block; 
+    /* کل فضای بالای دکمه خرید را پوشش می‌دهد */
+    padding: 0 0 10px 0; 
+    margin-bottom: 10px;
+}
+
+/* برای جلوگیری از اینکه دکمه خرید ناخواسته داخل این لینک قرار گیرد، باید دکمه را خارج از تگ <a> گذاشت */
+.product-card .buy-btn {
+    /* مطمئن شوید دکمه خرید زیر لینک اصلی قرار بگیرد */
+    position: relative; 
+    z-index: 2; /* بالاتر از لینک overlay باشد */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    color: #00695c;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #ff9800;
+}
+
+
+/* --- 5. بنر کوچک‌تر تبلیغاتی (Callout Banner) --- */
+.callout-banner {
+    padding: 80px 5%;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: right;
+    position: relative;
+    margin-top: 50px;
+}
+
+.callout-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+.callout-content {
+    position: relative;
+    z-index: 10;
+    max-width: 500px; 
+}
+
+.callout-content h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffc107;
+}
+
+.callout-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.callout-btn {
+    display: inline-block;
+    background-color: #004d40;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.callout-btn:hover {
+    background-color: #00695c;
+}
+
+
+/* --- 6. فوتر (Footer) --- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --- استایل‌های صفحات داخلی (About, Products) --- */
+
+.full-page-grid {
+    padding-top: 100px;
+    min-height: 80vh;
+}
+
+.about-page {
+    padding-top: 50px; 
+    min-height: 80vh; 
+}
+
+.about-section {
+    padding: 20px 0%;
+}
+
+.about-section h2 {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.about-card {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+	text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-card h3 {
+    color: #0A1931;
+    font-size: 1.8em;
+    border-bottom: 2px solid #FF5722; 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.about-card ul li {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.about-card ul li i {
+    color: #00695c;
+    margin-left: 10px;
+}
+
+.image-focus {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.image-focus img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #777;
+}
+
+.experience-call .cta-btn {
+    margin-top: 15px;
+    font-size: 1.1em;
+    padding: 12px 30px;
+}
+
+
+/* --- استایل‌های اختصاصی صفحه جزئیات محصول (Product View) - عمومی برای دسکتاپ و موبایل --- */
+
+.product-view-page {
+    padding-top: 50px; 
+    min-height: 80vh; 
+}
+
+.product-details {
+    /* طرح بندی دو ستونه در دسکتاپ */
+    display: flex;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.product-image-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: white; /* **زمینه سفید** */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.main-product-img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 1.5;
+    background-color: white; /* **زمینه سفید** */
+    padding: 30px;
+    border-radius: 8px;
+	text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-info h1 {
+    font-size: 2.5em;
+    color: #0A1931;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #FF5722;
+    padding-bottom: 10px;
+	text-align: left;
+}
+
+.product-price {
+    font-size: 1.8em;
+    color: #FF5722;
+    font-weight: bold;
+    margin-bottom: 30px;
+	text-align: left;
+}
+
+/* --- استایل دکمه واتساپ --- */
+.whatsapp-btn {
+    display: block; 
+    text-align: center;
+    background-color: #25D366; /* سبز واتساپ */
+    color: white;
+    padding: 15px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn i {
+    margin-left: 10px;
+}
+
+
+/* =================================
+    واکنش‌گرایی (Responsive Design)
+    ================================= */
+
+@media (max-width: 900px) {
+    /* تغییر چیدمان دو ستونه به تک ستونه در موبایل */
+    .product-details {
+        flex-direction: column; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* --- نوار ناوبری موبایل --- */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0A1931; /* اصلاح رنگ به رنگ نوار اصلی */
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 5%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
+    /* --- بنرهای موبایل --- */
+    .hero-banner {
+        height: 60vh;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .banner-content {
+        padding: 0 5%;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5em;
+    }
+    
+    .banner-content p {
+        font-size: 1.2em;
+    }
+
+    .promotion-banner {
+        padding: 60px 5%;
+    }
+	
+	
+}
+
+
+/* --- استایل‌های اختصاصی صفحه تماس با ما (Contact Page) --- */
+
+.contact-page {
+    padding-top: 50px; 
+    min-height: 80vh; 
+}
+
+.contact-section {
+    padding: 20px 0;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* تمام محتوا در مرکز قرار گیرد */
+}
+
+.contact-card h3 {
+    color: #0A1931;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FF5722;
+    display: inline-block; /* برای اینکه خط زیر کل عرض را نگیرد */
+    padding-bottom: 5px;
+}
+
+.contact-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* بزرگتر کردن دکمه واتساپ در این صفحه */
+.whatsapp-lg {
+    font-size: 1.5em; 
+    padding: 18px 0 !important;
+    max-width: 400px; /* محدود کردن عرض در دسکتاپ */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+
+/* --- استایل محرمانگی --- */
+
+.privacy-note {
+    background-color: #f0f8ff; /* رنگ زمینه ملایم */
+    border: 1px solid #cce5ff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: left; /* متن داخلی به راست برگردد */
+}
+
+.privacy-note h3 {
+    color: #0A1931; 
+    font-size: 1.6em;
+    border-bottom: 2px solid #0A1931;
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+	text-align: left;
+}
+
+.privacy-note ul {
+    list-style: none;
+    padding: 0;
+	text-align: left;
+}
+
+.privacy-note ul li {
+    font-size: 1em;
+    margin-bottom: 12px;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.privacy-note ul li i {
+    color: #004d40; /* یک رنگ تیره امنیتی */
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+/* --- واکنش‌گرایی برای موبایل --- */
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 20px;
+    }
+    .whatsapp-lg {
+        font-size: 1.2em;
+        padding: 15px 0 !important;
+    }
+    .privacy-note h3 {
+        font-size: 1.4em;
+    }
+}
+
+/* --- استایل‌های اختصاصی صفحه 404 (Not Found) --- */
+
+.error-404-page {
+    padding-top: 80px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error-container {
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-container h1 {
+    font-size: 6em;
+    color: #FF5722; /* رنگ نارنجی شاد */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-container h2 {
+    font-size: 2.2em;
+    color: #0A1931;
+    margin-bottom: 25px;
+}
+
+.error-container p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.error-actions {
+    display: flex;
+    flex-wrap: wrap; /* برای موبایل زیر هم قرار بگیرند */
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.error-actions .cta-btn {
+    font-size: 1.1em;
+    padding: 12px 25px;
+    margin-top: 0; /* برای حذف مارجین اضافی از cta-btn عمومی */
+    display: flex; /* برای قرارگیری آیکون کنار متن */
+    align-items: center;
+}
+
+.error-actions .cta-btn i {
+    margin-left: 10px;
+}
+
+.error-image {
+    margin: 40px 0;
+}
+
+.error-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error-tip {
+    font-size: 0.95em;
+    color: #999;
+    margin-top: 30px;
+}
+
+
+/* --- واکنش‌گرایی برای موبایل صفحه 404 --- */
+@media (max-width: 600px) {
+    .error-container h1 {
+        font-size: 4em;
+    }
+    .error-container h2 {
+        font-size: 1.8em;
+    }
+    .error-actions {
+        flex-direction: column; /* دکمه ها زیر هم قرار بگیرند */
+    }
+    .error-actions .cta-btn {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .error-image img {
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* --- استایل‌های اختصاصی صفحه گالری (Gallery Page) --- */
+
+.gallery-page {
+    padding-top: 50px;
+    min-height: 80vh;
+}
+
+.gallery-section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    margin-bottom: 20px;
+}
+
+.gallery-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 15px; /* کمی فاصله از کناره‌ها */
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* ارتفاع ثابت برای تصاویر گالری */
+    object-fit: cover; /* تصاویر را برش می‌دهد اما فضای خالی باقی نمی‌گذارد */
+    display: block;
+}
+
+/* --- استایل‌های مودال (Popup) گالری --- */
+
+.modal {
+    display: none; /* مخفی به طور پیش فرض */
+    position: fixed; /* در موقعیت ثابت قرار می‌گیرد */
+    z-index: 1001; /* بالاتر از همه عناصر */
+    padding-top: 60px; /* فاصله از بالا */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* برای اسکرول در صورت لزوم */
+    background-color: rgba(0,0,0,0.9); /* پس زمینه تیره نیمه شفاف */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 1.2em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- واکنش‌گرایی برای موبایل --- */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .gallery-item img {
+        height: 180px;
+    }
+    .modal-content {
+        width: 95%;
+    }
+    #caption {
+        width: 95%;
+    }
+    .close-btn {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+
+/* --- استایل دکمه‌های قبلی و بعدی در مودال --- */
+
+.prev-btn, .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 1002;
+}
+
+.next-btn {
+    left: 20px; /* چون جهت صفحه RTL است، قبلی و بعدی را برعکس می‌کنیم یا دستی تنظیم می‌کنیم */
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-btn {
+    right: 20px;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 87, 34, 0.8); /* رنگ نارنجی برند شما */
+}
+
+@media (max-width: 768px) {
+    .prev-btn, .next-btn {
+        padding: 10px;
+        font-size: 20px;
+    }
+}

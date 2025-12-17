@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="files/favicon.ico">
+    <title>ParsDrink - Picture Gallery</title>
+<meta name="description" content="مشاهده تصاویر واقعی محصولات، بسته‌بندی‌های محرمانه و فرآیند تولید در پارس درینک. ما به شفافیت در کیفیت معتقدیم.">
+<meta name="keywords" content="تصاویر پارس درینک، عکس ودکا، عکس ویسکی دودی، بسته بندی پارس درینک، گالری parsdrink">
+<link rel="canonical" href="https://parsdrink.shop/gallery.html">
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Product</a>
+			<a href="gallery.html" class="active-link">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content gallery-page">
+        <div class="container">
+            <section class="gallery-section">
+                <h2>Products Picture Gallery</h2>
+                <p class="gallery-description">Learn more about Pars Drink's products and brand space with our collection of images</p>
+                
+                <div class="gallery-grid">
+				
+                    <div class="gallery-item" data-src="files/gallery/vod-hame.jpg" data-alt="All Pars Drink products">
+                        <img src="files/gallery/vod-hame.jpg" alt="All Pars Drink products">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/apple-nature-vodka.jpg" data-alt="Apple vodka from nature">
+                        <img src="files/gallery/apple-nature-vodka.jpg" alt="Apple vodka from nature">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/banana-cool-vodka.jpg" data-alt="The cool and sweet taste of banana vodka">
+                        <img src="files/gallery/banana-cool-vodka.jpg" alt="The cool and sweet taste of banana vodka">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/friend-girls-vodka-drink.jpg" data-alt="Your friendly companion drink">
+                        <img src="files/gallery/friend-girls-vodka-drink.jpg" alt="Your friendly companion drink">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/grape-shiraz-vodka.jpg" data-alt="Pure Iranian Shiraz Vodka">
+                        <img src="files/gallery/grape-shiraz-vodka.jpg" alt="Pure Iranian Shiraz Vodka">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/lemon-drink.jpg" data-alt="Hawaiian lime vodka">
+                        <img src="files/gallery/lemon-drink.jpg" alt="Hawaiian lime vodka">
+                    </div>
+					
+                    <div class="gallery-item" data-src="files/gallery/lemon-ice.jpg" data-alt="Lemon and ice and lemon vodka">
+                        <img src="files/gallery/lemon-ice.jpg" alt="Lemon and ice and lemon vodka">
+                    </div>
+					
+					<div class="gallery-item" data-src="files/gallery/lemon-serving.jpg" data-alt="Serve with fresh lemon">
+                        <img src="files/gallery/lemon-serving.jpg" alt="Serve with fresh lemon">
+                    </div>
+					
+					<div class="gallery-item" data-src="files/gallery/old-man-hwisky.jpg" data-alt="Classic aged whiskey">
+                        <img src="files/gallery/old-man-hwisky.jpg" alt="Classic aged whiskey">
+                    </div>
+					
+					<div class="gallery-item" data-src="files/gallery/old-whisky-oak-smoked.jpg" data-alt="Whiskey flavored with smoked oak">
+                        <img src="files/gallery/old-whisky-oak-smoked.jpg" alt="Whiskey flavored with smoked oak">
+                    </div>
+					
+					<div class="gallery-item" data-src="files/gallery/parsdrink-shoping.jpg" data-alt="Buying Pars Drink in stores">
+                        <img src="files/gallery/parsdrink-shoping.jpg" alt="Buying Pars Drink in stores">
+                    </div>
+					
+					<div class="gallery-item" data-src="files/gallery/party-banana-vodka.jpg" data-alt="Drinks for friendly party">
+                        <img src="files/gallery/party-banana-vodka.jpg" alt="Drinks for friendly party">
+                    </div>
+					
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+<p>Powered by Pars Drink</p>
+    </footer>
+
+<div id="galleryModal" class="modal">
+    <span class="close-btn">&times;</span>
+    
+    <button class="prev-btn" id="prevBtn">&#10094;</button>
+    <button class="next-btn" id="nextBtn">&#10095;</button>
+    
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+    <script src="files/gallery-script.js"></script> 
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>

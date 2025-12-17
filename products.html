@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="files/favicon.ico">
+    <title>ParsDrink - Products</title>
+<meta name="description" content="لیست کامل محصولات پارس درینک شامل ویسکی گندم دودی، ودکا سیب سبز، موز، انگور و لیمو. تمامی محصولات با بهترین مواد اولیه و تقطیر حرفه‌ای تهیه شده‌اند.">
+<meta name="keywords" content="خرید آنلاین ودکا، قیمت ویسکی گندم، سفارش ودکا میوه ای، پارس درینک محصولات، انواع نوشیدنی الکلی">
+	<link rel="canonical" href="https://parsdrink.shop/products.html">
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active-link">Product</a>
+			<a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content">
+        <section class="products-grid full-page-grid" id="products">
+            <h2>All Products</h2>
+
+            <div class="grid-container">
+                <div class="product-card">
+				<a href="product-view-whisky.html" class="product-link-overlay">
+                    <img src="files/products/whisky.jpg" alt="Wheat Whisky">
+                    <h3>Wheat Whisky</h3>
+                    <p>Made from the finest wheat with a mild smoky flavor</p>
+					</a>
+                    <a href="product-view-whisky.html" class="buy-btn">Buy Product</a>
+                </div>
+                
+                <div class="product-card">
+				<a href="product-view-grape.html" class="product-link-overlay">
+                    <img src="files/products/grape.jpg" alt="Grape Vodka">
+                    <h3>Grape Vodka</h3>
+                    <p>Ripe red grape extract. Suitable for party cocktails</p>
+					</a>
+                    <a href="product-view-grape.html" class="buy-btn">Buy Product</a>
+                </div>
+
+                <div class="product-card">
+				<a href="product-view-lemon.html" class="product-link-overlay">
+                    <img src="files/products/lemon.jpg" alt="Lemon Vodka">
+                    <h3>Lemon Vodka</h3>
+                    <p>The sour and tangy taste of fresh lemon. Very refreshing</p>
+					</a>
+                    <a href="product-view-lemon.html" class="buy-btn">Buy Product</a>
+                </div>
+                
+                 <div class="product-card">
+				 <a href="product-view-apple.html" class="product-link-overlay">
+                    <img src="files/products/apple.jpg" alt="Apple Vodka">
+                    <h3>Apple Vodka</h3>
+                    <p>Fresh green apple. A taste that brings back memories</p>
+					</a>
+                    <a href="product-view-apple.html" class="buy-btn">Buy Product</a>
+                </div>
+
+                 <div class="product-card">
+				 <a href="product-view-banana.html" class="product-link-overlay">
+                    <img src="files/products/banana.jpg" alt="Banana Vodka">
+                    <h3>Banana Vodka</h3>
+                    <p>The sweet taste of fresh banana A different experience from vodka</p>
+					</a>
+                    <a href="product-view-banana.html" class="buy-btn">Buy Product</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+<p>Powered by Pars Drink</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
