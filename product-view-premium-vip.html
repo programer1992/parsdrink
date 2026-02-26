@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="files/favicon.ico">
+    <title>ParsDrink - Premium Vodka - Product Details</title>
+<meta name="description" content="ودکا کشمش پارس درینک با طعم اصیل ایرانی تهیه شده از بهترین کشمش سایه خشک و تقطیر سنتی. تجربه‌ای گرم و ماندگار برای خاص‌پسندان">
+<meta name="keywords" content="خرید ودکا کشمش، عرق کشمش ایران، ودکا دست ساز، قیمت ودکا کشمش، پارس درینک ودکا">
+	<link rel="canonical" href="https://parsdrink.shop/product-view-premium-vip.html">
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+        <div class="logo"><a href="index.html">ParsDrink</a></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active-link">Product</a>
+			<a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <main class="main-content product-view-page">
+        <div class="container">
+            
+            <section class="product-details">
+                
+                <div class="product-image-container">
+                    <img src="files/products/premium.jpg" alt="Wheat Whisky" class="main-product-img">
+                </div>
+                
+                <div class="product-info">
+                    <h1>Premium Vodka</h1>
+                    <p class="product-price">Best Vip Premium Vodka</p>
+                    
+                    <div class="short-description">
+                        <h3>Summary</h3>
+                        <p>Double distilled vodka made from the finest shade-dried raisins, with no additives, all-natural</p>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>Specifications</h3>
+                        <ul>
+                            <li>Volume : 1000 ml <i class="fas fa-wine-bottle" style="margin-right:5px;"></i></li>
+                            <li> Alcohol : 45% VOL <i class="fas fa-percent" style="margin-right:5px;"></i></li>
+						    <li> Main ingredients: Dried shade raisins, spring water <i class="fas fa-seedling" style="margin-right:5px;"></i></li>
+                            <li> Serving suggestion: Cold with light snacks <i class="fas fa-utensils" style="margin-right:5px;"></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="long-description">
+                        <h3>Full description</h3>
+                        <p>This vodka is patiently distilled twice and aged in a cool, dark environment for several months to capture the strong and authentic flavor of a traditional drink from the hearts of Iranian men and women. Made with Iranian love</p>
+                    </div>
+                    
+                    <a href="https://wa.me/212783611965?text=hi" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Buy From Whatsapp
+                    </a>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+<p>Powered by Pars Drink</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.querySelector('.nav-links').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
